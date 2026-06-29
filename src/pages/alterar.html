@@ -10,7 +10,7 @@
     <main class="app-shell">
       <h2>Alterar status da solicitação</h2>
       <p class="app-subtitle">
-        Informe o código da solicitação e escolha o novo status.
+        Informe o código da solicitação e atualize os campos desejados.
       </p>
 
       <section class="cadastro-container" aria-label="Formulário de alteração">
@@ -23,16 +23,42 @@
           />
         </p>
         <p>
-          <label for="inpStatus">Status:</label>
-          <select id="inpStatus">
-            <option value="Pendente">Pendente</option>
-            <option value="Em andamento">Em andamento</option>
-            <option value="Concluída">Concluída</option>
-            <option value="Cancelada">Cancelada</option>
+          <label for="inpNome">Nome:</label>
+          <input id="inpNome" type="text" placeholder="Nome do solicitante" />
+        </p>
+        <p>
+          <label for="inpBairro">Bairro:</label>
+          <input id="inpBairro" type="text" placeholder="Bairro" />
+        </p>
+        <p>
+          <label for="inpServico">Serviço:</label>
+          <select id="inpServico">
+            <option value="Iluminação Pública">Iluminação Pública</option>
+            <option value="Tapa Buraco / Asfalto">Tapa Buraco / Asfalto</option>
+            <option value="Coleta de Lixo / Entulho">
+              Coleta de Lixo / Entulho
+            </option>
+            <option value="Vazamento de Água/Esgoto">
+              Vazamento de Água/Esgoto
+            </option>
+            <option value="Poda de Árvores">Poda de Árvores</option>
+            <option value="Outros">Outros</option>
           </select>
         </p>
+        <p>
+          <label for="inpDescricao">Descrição:</label>
+          <textarea
+            id="inpDescricao"
+            rows="4"
+            placeholder="Descrição da solicitação"
+          ></textarea>
+        </p>
+        <p>
+          <label for="inpStatus">Status:</label>
+          <select id="inpStatus"></select>
+        </p>
 
-        <div class="form-actions two-actions">
+        <div class="form-actions split-actions">
           <button id="btnAlterar" type="button">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path

@@ -13,7 +13,10 @@ export const STATUS_SOLICITACAO = [
   "Cancelada",
 ];
 
-export async function listarSolicitacoes(statusFiltro = "Todas", ordemCodigo = "desc") {
+export async function listarSolicitacoes(
+  statusFiltro = "Todas",
+  ordemCodigo = "desc",
+) {
   let query = supabase
     .from("Prefeitura")
     .select(
@@ -59,6 +62,27 @@ export async function alterarStatusSolicitacao(id, statusSolicitacao) {
     .update({ status: statusSolicitacao })
     .eq("id", id)
     .select("id,status")
+    .single();
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+}
+
+export async function atualizarSolicitacao(id, solicitacao) {
+  const { data, error } = await supabase
+    .from("Prefeitura")
+    .update({
+      nome_solicitante: solicitacao.nome_solicitante,
+      bairro: solicitacao.bairro,
+      tipo_servico: solicitacao.tipo_servico,
+      descricao: solicitacao.descricao,
+      status: solicitacao.status || "Pendente",
+    })
+    .eq("id", id)
+    .select("id")
     .single();
 
   if (error) {
