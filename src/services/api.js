@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = "SUA_PROJECT_URL_AQUI";
-const supabaseKey = "SUA_CHAVE_ANON_AQUI";
+// Substitua estas strings pelos valores reais do seu painel do Supabase
+const supabaseUrl = "https://nwinufbkbmpqowycabhu.supabase.co";
+const supabaseKey = "sb_publishable_P7lq2lLn1RZtK1L5qRftRA_FUuBZqrM";
 
 export const supabase = createClient(supabaseUrl, supabaseKey);

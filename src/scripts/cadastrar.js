@@ -1,69 +1,48 @@
-import  api  from '../services/api.js';
+// Importa a conexão com o Supabase configurada no api.js
+import { supabase } from "../services/api.js";
 
+const formCadastrar = document.getElementById("form-cadastrar");
 
+formCadastrar.addEventListener("submit", async (event) => {
+  event.preventDefault(); // Evita o recarregamento padrão da página
 
-// Referências do DOM HTML
+  // Captura os valores dos campos do formulário
+  const nome = document.getElementById("nome").value;
+  const bairro = document.getElementById("bairro").value;
+  const servico = document.getElementById("servico").value;
+  const descricao = document.getElementById("descricao").value;
 
-const inpNome = document.getElementById('inpNome');
-const inpEmail = document.getElementById('inpEmail');
-const inpUf = document.getElementById('inpUf');
-const inpPassword = document.getElementById('inpPassword');
-const inpLevel = document.getElementById('inpLevel');
+  // Altera o texto do botão para indicar carregamento
+  const btnSubmit = document.querySelector(".btn-submit");
+  const textoOriginalBtn = btnSubmit.innerText;
+  btnSubmit.innerText = "Cadastrando...";
+  btnSubmit.disabled = true;
 
-const btnCadastrar = document.getElementById('btnCadastrar');
-const btnLimpar = document.getElementById('btnLimpar');
-const btnVoltar = document.getElementById('btnVoltar');
+  try {
+    // Envia os dados para a tabela 'solicitacoes' no Supabase
+    const { data, error } = await supabase.from("solicitacoes").insert([
+      {
+        nome_solicitante: nome,
+        bairro: bairro,
+        tipo_servico: servico,
+        descricao: descricao,
+        // O banco de dados vai preencher o "status" como 'Pendente' automaticamente
+      },
+    ]);
 
-// Lógica de Programação
-
-function getDados(){
-    const nome = inpNome.value;
-    const email = inpEmail.value;
-    const uf = inpUf.value;
-    const password = inpPassword.value;
-    const level = inpLevel.value;
-
-    const dados = {
-        'nome':nome,
-        'email':email,
-        'uf':uf,
-        'password':password,
-        'level':level
-    }
-    //console.log(dados);
-    return dados;
-}
-
-
-async function createFor(dados){
-    try {const response = await api.post('/fornecedor',dados);
-    console.log(response);
-    alert('Cadastro Realizado');
+    if (error) {
+      throw error; // Se houver erro, joga para o catch
     }
 
-    catch (error){
-        console.error(error);
-        alert('Error');
-
-    }
-}
-
-
-btnCadastrar.onclick = ()=>{
-    const dados = getDados();
-    createFor(dados);
-} 
-
-btnVoltar.onclick = ()=>{
-    window.location.href = `${import.meta.env.BASE_URL}index.html`;
-};
-
-btnLimpar.onclick = ()=>{
-     inpNome.value = '';
-     inpEmail.value = '';
-     inpUf.value = '';
-     inpPassword.value = '';
-     inpLevel.value = '';
-     inpCod.value = '';
-    
-};
+    // Sucesso!
+    alert("Solicitação cadastrada com sucesso!");
+    formCadastrar.reset(); // Limpa o formulário
+  } catch (error) {
+    console.error("Erro ao cadastrar:", error);
+    alert("Erro ao cadastrar solicitação: " + error.message);
+  } finally {
+    // Restaura o botão independentemente de erro ou sucesso
+    btnSubmit.innerText = textoOriginalBtn;
+    btnSubmit.disabled = false;
+  }
+});
