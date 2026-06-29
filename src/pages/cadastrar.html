@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cadastro</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body class="app-page">
+    <main class="app-shell">
+        <h2>Cadastro de Fornecedores</h2>
+        <p class="app-subtitle">Preencha os dados e confirme o cadastro no sistema.</p>
+
+        <section class="cadastro-container" aria-label="Formulário de cadastro">
+            <p><label for="inpNome">Nome:</label> <input id="inpNome" type="text"></p>
+            <p><label for="inpEmail">E-mail:</label> <input id="inpEmail" type="text"></p>
+            <p><label for="inpUf">UF:</label> <input id="inpUf" type="text"></p>
+            <p><label for="inpPassword">Password:</label> <input id="inpPassword" type="text"></p>
+            <p><label for="inpLevel">Level:</label> <input id="inpLevel" type="text"></p>
+
+            <div class="form-actions">
+                <button id="btnCadastrar" type="button">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5A2.5 2.5 0 0 1 11.5 4h7A2.5 2.5 0 0 1 21 6.5v4a1 1 0 1 1-2 0v-4a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h3a1 1 0 1 1 0 2h-3A2.5 2.5 0 0 1 9 17.5v-11ZM4.5 8A2.5 2.5 0 0 0 2 10.5v7A2.5 2.5 0 0 0 4.5 20h4a1 1 0 1 0 0-2h-4a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H8.5a1 1 0 1 0 0-2h-4ZM19 15h-2v-2a1 1 0 1 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0v-2h2a1 1 0 1 0 0-2Z"/></svg>
+                    <span>Cadastrar</span>
+                </button>
+                <button id="btnLimpar" type="button">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.24 3.56a1 1 0 0 1 1.41 0l2.79 2.79a1 1 0 0 1 0 1.41l-9.9 9.9a1 1 0 0 1-.46.26l-4.12 1.03a1 1 0 0 1-1.21-1.21l1.03-4.12a1 1 0 0 1 .26-.46l9.9-9.9ZM15.53 6.4l-8.84 8.84-.51 2.06 2.06-.51 8.84-8.84-1.55-1.55Zm2.96.14 1.38-1.38-1.38-1.38-1.38 1.38 1.38 1.38ZM3 20a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Z"/></svg>
+                    <span>Limpar</span>
+                </button>
+                <button id="btnVoltar" type="button">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.53 5.47a1 1 0 0 1 0 1.41L6.41 11H20a1 1 0 1 1 0 2H6.41l4.12 4.12a1 1 0 0 1-1.41 1.41l-5.83-5.83a1 1 0 0 1 0-1.41l5.83-5.82a1 1 0 0 1 1.41 0Z"/></svg>
+                    <span>Voltar</span>
+                </button>
+            </div>
+        </section>
+    </main>
+    
+    <script type="module" src="../scripts/cadastrar.js"></script>
+</body>
+</html>
