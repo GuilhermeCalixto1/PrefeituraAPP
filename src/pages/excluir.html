@@ -1,31 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Exclusão</title>
-    <link rel="stylesheet" href="../styles/style.css">
-</head>
-<body class="app-page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excluir solicitação</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body class="app-page">
     <main class="app-shell">
-        <h2>Exclusão de Fornecedor</h2>
-        <p class="app-subtitle">Informe o código e confirme para remover o registro.</p>
+      <h2>Excluir solicitação</h2>
+      <p class="app-subtitle">
+        Informe o código da solicitação e confirme para remover o registro.
+      </p>
 
-        <section class="cadastro-container" aria-label="Formulário de exclusão">
-            <p><label for="inpCodigo">Código:</label> <input id="inpCodigo" type="text"></p>
-            <div class="form-actions two-actions">
-                <button id="btnExcluir" type="button">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3a1 1 0 0 0-1 1v1H5a1 1 0 1 0 0 2h.62l.9 10.78A3 3 0 0 0 9.5 21h5a3 3 0 0 0 2.99-3.22L18.38 7H19a1 1 0 1 0 0-2h-3V4a1 1 0 0 0-1-1H9Zm2 2V5h2v0h-2Zm-3.37 2h8.74l-.87 10.62a1 1 0 0 1-1 .88h-5a1 1 0 0 1-1-.88L7.63 7Zm2.37 2a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0v-5a1 1 0 0 0-1-1Zm4 0a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0v-5a1 1 0 0 0-1-1Z"/></svg>
-                    <span>Excluir</span>
-                </button>
-                <button id="btnVoltar" type="button">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.53 5.47a1 1 0 0 1 0 1.41L6.41 11H20a1 1 0 1 1 0 2H6.41l4.12 4.12a1 1 0 0 1-1.41 1.41l-5.83-5.83a1 1 0 0 1 0-1.41l5.83-5.82a1 1 0 0 1 1.41 0Z"/></svg>
-                    <span>Voltar</span>
-                </button>
-            </div>
-        </section>
+      <section class="cadastro-container" aria-label="Formulário de exclusão">
+        <p>
+          <label for="inpCodigo">Código:</label>
+          <input
+            id="inpCodigo"
+            type="number"
+            min="1"
+            placeholder="Digite o código da solicitação"
+          />
+        </p>
+
+        <div class="form-actions two-actions">
+          <button id="btnExcluir" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M9 3a1 1 0 0 0-1 1v1H5a1 1 0 1 0 0 2h.62l.9 10.78A3 3 0 0 0 9.5 21h5a3 3 0 0 0 2.99-3.22L18.38 7H19a1 1 0 1 0 0-2h-3V4a1 1 0 0 0-1-1H9Zm2 2V5h2v0h-2Zm-3.37 2h8.74l-.87 10.62a1 1 0 0 1-1 .88h-5a1 1 0 0 1-1-.88L7.63 7Zm2.37 2a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0v-5a1 1 0 0 0-1-1Zm4 0a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0v-5a1 1 0 0 0-1-1Z"
+              />
+            </svg>
+            <span>Excluir</span>
+          </button>
+          <button id="btnVoltar" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M10.53 5.47a1 1 0 0 1 0 1.41L6.41 11H20a1 1 0 1 1 0 2H6.41l4.12 4.12a1 1 0 0 1-1.41 1.41l-5.83-5.83a1 1 0 0 1 0-1.41l5.83-5.82a1 1 0 0 1 1.41 0Z"
+              />
+            </svg>
+            <span>Voltar</span>
+          </button>
+        </div>
+      </section>
     </main>
-    
+
     <script type="module" src="../scripts/excluir.js"></script>
-</body>
+  </body>
 </html>

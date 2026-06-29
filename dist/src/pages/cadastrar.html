@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastrar Solicitação</title>
+    <script type="module" crossorigin src="/assets/cadastrar-DnHYZaD1.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/style-COyOslQ-.js">
+    <link rel="modulepreload" crossorigin href="/assets/api-CdzKJSeH.js">
+    <link rel="stylesheet" crossorigin href="/assets/style-D2DZEl-7.css">
+  </head>
+  <body class="app-page">
+    <main class="app-shell">
+      <h2>Nova Solicitação</h2>
+      <p class="app-subtitle">
+        Registre um novo pedido informando todos os dados e o status inicial.
+      </p>
+
+      <section class="cadastro-container" aria-label="Formulário de cadastro">
+        <form id="form-cadastrar">
+          <p>
+            <label for="nome">Nome do Solicitante:</label>
+            <input
+              id="nome"
+              type="text"
+              placeholder="Digite seu nome completo"
+              required
+            />
+          </p>
+          <p>
+            <label for="bairro">Bairro:</label>
+            <input
+              id="bairro"
+              type="text"
+              placeholder="Digite o nome do bairro"
+              required
+            />
+          </p>
+          <p>
+            <label for="servico">Tipo de Serviço:</label>
+            <select id="servico" required>
+              <option value="" disabled selected>
+                Selecione um serviço...
+              </option>
+              <option value="Iluminação Pública">Iluminação Pública</option>
+              <option value="Tapa Buraco / Asfalto">
+                Tapa Buraco / Asfalto
+              </option>
+              <option value="Coleta de Lixo / Entulho">
+                Coleta de Lixo / Entulho
+              </option>
+              <option value="Vazamento de Água/Esgoto">
+                Vazamento de Água/Esgoto
+              </option>
+              <option value="Poda de Árvores">Poda de Árvores</option>
+              <option value="Outros">Outros</option>
+            </select>
+          </p>
+          <p>
+            <label for="statusSolicitacao">Status:</label>
+            <select id="statusSolicitacao" required>
+              <option value="Pendente" selected>Pendente</option>
+              <option value="Em andamento">Em andamento</option>
+              <option value="Concluída">Concluída</option>
+              <option value="Cancelada">Cancelada</option>
+            </select>
+          </p>
+          <p>
+            <label for="descricao">Descrição:</label>
+            <textarea
+              id="descricao"
+              rows="4"
+              placeholder="Descreva o problema com detalhes..."
+              required
+            ></textarea>
+          </p>
+
+          <div class="form-actions two-actions">
+            <button id="btnVoltar" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M10.53 5.47a1 1 0 0 1 0 1.41L6.41 11H20a1 1 0 1 1 0 2H6.41l4.12 4.12a1 1 0 0 1-1.41 1.41l-5.83-5.83a1 1 0 0 1 0-1.41l5.83-5.82a1 1 0 0 1 1.41 0Z"
+                />
+              </svg>
+              <span>Voltar</span>
+            </button>
+            <button
+              id="btnCadastrarSolicitacao"
+              type="submit"
+              class="btn-submit"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M9 6.5A2.5 2.5 0 0 1 11.5 4h7A2.5 2.5 0 0 1 21 6.5v4a1 1 0 1 1-2 0v-4a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h3a1 1 0 1 1 0 2h-3A2.5 2.5 0 0 1 9 17.5v-11ZM4.5 8A2.5 2.5 0 0 0 2 10.5v7A2.5 2.5 0 0 0 4.5 20h4a1 1 0 1 0 0-2h-4a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H8.5a1 1 0 1 0 0-2h-4Z"
+                />
+              </svg>
+              <span>Cadastrar Solicitação</span>
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+  </body>
+</html>

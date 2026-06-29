@@ -1,29 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Consulta</title>
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/consultaNome.css">
-</head>
-<body class="app-page consulta-page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitações Cadastradas</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/consultaNome.css" />
+  </head>
+  <body class="app-page consulta-page">
     <main class="app-shell consulta-shell">
-        <div class="consulta-nome-header">
-            <h3>Sistema de Consulta por Nome</h3>
-            <input type="text" id="nomeFornecedor" placeholder="Digite um nome">
-            <button id="btnVoltar" type="button">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.53 5.47a1 1 0 0 1 0 1.41L6.41 11H20a1 1 0 1 1 0 2H6.41l4.12 4.12a1 1 0 0 1-1.41 1.41l-5.83-5.83a1 1 0 0 1 0-1.41l5.83-5.82a1 1 0 0 1 1.41 0Z"/></svg>
-                <span>Voltar</span>
-            </button>
-        </div>
+      <div class="consulta-nome-header">
+        <h3>Solicitações cadastradas</h3>
+        <select id="statusFiltro" aria-label="Filtrar por status"></select>
+        <select id="ordemCodigo" aria-label="Ordenar por código"></select>
+        <button id="btnAtualizar" type="button">Atualizar lista</button>
+        <button id="btnVoltar" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M10.53 5.47a1 1 0 0 1 0 1.41L6.41 11H20a1 1 0 1 1 0 2H6.41l4.12 4.12a1 1 0 0 1-1.41 1.41l-5.83-5.83a1 1 0 0 1 0-1.41l5.83-5.82a1 1 0 0 1 1.41 0Z"
+            />
+          </svg>
+          <span>Voltar</span>
+        </button>
+      </div>
 
-        <div id="resultadoConsultaNome"></div>
+      <div id="resultadoConsultaSolicitacoes"></div>
     </main>
-    
-
-
 
     <script type="module" src="../scripts/consultar.js"></script>
-</body>
+  </body>
 </html>

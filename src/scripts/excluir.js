@@ -1,22 +1,40 @@
-import api from '../services/api.js';
-//Referencias DOM
+import { supabase } from "../services/api.js";
 
-const inpCodigo = document.getElementById('inpCodigo');
+const inpCodigo = document.getElementById("inpCodigo");
 const btnExcluir = document.getElementById("btnExcluir");
 const btnVoltar = document.getElementById("btnVoltar");
 
-//Logica
+btnExcluir.onclick = async () => {
+  try {
+    const id = Number(inpCodigo.value);
 
-async function exclusao(){
-    const codfor = inpCodigo.value;
-    const resposta = await api.delete(`/fornecedor/${codfor}`);
-    console.log(resposta);
+    if (!id) {
+      alert("Informe um código válido.");
+      return;
+    }
+
+    const confirmou = confirm(
+      "Tem certeza que deseja excluir esta solicitação?",
+    );
+
+    if (!confirmou) {
+      return;
+    }
+
+    const { error } = await supabase.from("Prefeitura").delete().eq("id", id);
+
+    if (error) {
+      throw error;
+    }
+
+    alert("Solicitação excluída com sucesso.");
+    inpCodigo.value = "";
+  } catch (error) {
+    console.error("Erro ao excluir solicitação:", error);
+    alert("Erro ao excluir solicitação: " + error.message);
+  }
 };
 
-btnExcluir.onclick = ()=>{
-    exclusao();
-}
-
-btnVoltar.onclick = ()=>{
-    window.location.href = `${import.meta.env.BASE_URL}index.html`;
+btnVoltar.onclick = () => {
+  window.location.href = `${import.meta.env.BASE_URL}index.html`;
 };

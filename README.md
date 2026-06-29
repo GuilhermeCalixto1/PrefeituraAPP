@@ -1,5 +1,5 @@
 <h1 align="center">
-  📦 Controle de Fornecedores
+  📦 Solicitações da Prefeitura
 </h1>
 
 <div align="center">
@@ -10,7 +10,7 @@
 </div>
 
 <p align="center">
-  <b>Uma solução SPA (Single Page Application) moderna para gerenciamento corporativo de parceiros e fornecedores.</b>
+  <b>Uma aplicação simples para cadastro, consulta e atualização de solicitações da prefeitura, com persistência em banco.</b>
 </p>
 
 <br>
@@ -26,9 +26,9 @@
 
 ## 🔖 Sobre
 
-O **Controle de Fornecedores** é uma aplicação Fullstack (Front-end desacoplado) desenvolvida para resolver a necessidade de cadastro e gestão rápida de parceiros comerciais.
+O **Solicitações da Prefeitura** é uma aplicação voltada ao registro e acompanhamento de pedidos de serviço feitos por moradores.
 
-Diferente de projetos estáticos, este sistema consome uma **API REST Real** hospedada na nuvem, garantindo que os dados sejam persistidos e seguros. O foco do desenvolvimento foi a performance (usando Vite) e a organização de código (Padrão de Camadas).
+Diferente de projetos estáticos, este sistema usa o **Supabase** como back-end e banco de dados, garantindo persistência e consulta em tempo real. O foco do desenvolvimento foi a performance (usando Vite) e a organização do fluxo de dados.
 
 ---
 
@@ -50,15 +50,14 @@ O projeto foi desenvolvido com o que há de mais moderno no ecossistema JavaScri
 
 ## ⚙️ Funcionalidades
 
-### 🔐 CRUD Completo
+### 🔐 Funcionalidades
 
 O sistema cobre todo o ciclo de vida da informação:
 
-- [x] **🟢 Create:** Cadastro validado de novos fornecedores (Nome, Email, UF, Nível).
-- [x] **🔵 Read:** - Listagem inteligente com tabela dinâmica.
-  - Pesquisa filtrada por **Nome** ou **Código**.
-- [x] **🟠 Update:** Edição rápida de dados cadastrais.
-- [x] **🔴 Delete:** Remoção segura de registros obsoletos.
+- [x] **🟢 Create:** Cadastro de solicitações com nome, bairro, tipo de serviço, descrição e status.
+- [x] **🔵 Read:** Listagem de solicitações cadastradas com filtro por status.
+- [x] **🟠 Update:** Alteração do status de uma solicitação.
+- [x] **🗄️ Persistência:** Dados salvos no banco via Supabase.
 
 ### ✨ Diferenciais Técnicos
 

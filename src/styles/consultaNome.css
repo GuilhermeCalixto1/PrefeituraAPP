@@ -1,159 +1,221 @@
 /* styles/consultaNome.css */
 
 .consulta-shell {
-    width: min(96vw, 1120px);
-}
-
-.tabela-fornecedor-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    min-height: 54vh;
-    margin-top: 22px;
-}
-
-.tabela-fornecedor {
-    table-layout: fixed;
-    width: 100%;
-    background: rgba(12, 24, 48, 0.75);
-    border-radius: 12px;
-    box-shadow: 0 12px 28px rgba(2, 10, 24, 0.5);
-    border-collapse: collapse;
-    overflow: hidden;
-    border: 1px solid rgba(139, 193, 255, 0.28);
-}
-
-.tabela-fornecedor th, .tabela-fornecedor td {
-    padding: 12px 10px;
-    text-align: left;
-    border-bottom: 1px solid rgba(125, 170, 219, 0.18);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.tabela-fornecedor th {
-    background: linear-gradient(145deg, rgba(76, 141, 231, 0.82), rgba(43, 95, 182, 0.88));
-    color: #e7f5ff;
-    font-weight: 600;
-}
-
-.tabela-fornecedor tr:nth-child(even) {
-    background: rgba(110, 153, 214, 0.08);
-}
-
-.tabela-fornecedor tr:hover {
-    background: rgba(101, 202, 255, 0.18);
-    transition: background 0.2s ease;
+  width: min(96vw, 1240px);
 }
 
 .consulta-nome-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin-top: 0;
-    margin-bottom: 8px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
 }
 
 .consulta-shell .consulta-nome-header > * {
-    opacity: 0;
-    animation: consulta-fade-in 0.42s ease-out forwards;
+  opacity: 0;
+  animation: consulta-fade-in 0.42s ease-out forwards;
 }
 
-.consulta-shell .consulta-nome-header > *:nth-child(1) { animation-delay: 0.05s; }
-.consulta-shell .consulta-nome-header > *:nth-child(2) { animation-delay: 0.12s; }
-.consulta-shell .consulta-nome-header > *:nth-child(3) { animation-delay: 0.19s; }
-
-#resultadoConsultaNome {
-    opacity: 0;
-    animation: consulta-fade-in 0.45s ease-out 0.26s forwards;
+.consulta-shell .consulta-nome-header > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.consulta-shell .consulta-nome-header > *:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.consulta-shell .consulta-nome-header > *:nth-child(3) {
+  animation-delay: 0.19s;
+}
+.consulta-shell .consulta-nome-header > *:nth-child(4) {
+  animation-delay: 0.26s;
 }
 
 .consulta-nome-header h3 {
-    margin: 0;
-    font-size: clamp(1.3rem, 3.4vw, 2rem);
-    font-weight: 700;
-    color: #c5ecff;
-    margin-right: 8px;
+  margin: 0;
+  font-size: clamp(1.3rem, 3.4vw, 2rem);
+  font-weight: 700;
+  color: #c5ecff;
+  margin-right: 8px;
 }
 
-.consulta-nome-header input[type="text"] {
-    padding: 10px 12px;
-    font-size: 1rem;
-    border: 1px solid rgba(150, 196, 255, 0.36);
-    border-radius: 10px;
-    min-width: min(340px, 90vw);
-    background: rgba(10, 21, 43, 0.7);
-    color: #e5f5ff;
+.consulta-nome-header select,
+.consulta-nome-header button {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(138, 194, 255, 0.34);
+  border-radius: 10px;
+  background: linear-gradient(
+    145deg,
+    rgba(89, 135, 212, 0.45),
+    rgba(42, 83, 146, 0.68)
+  );
+  color: #e4f6ff;
+  font-weight: 600;
 }
 
-.consulta-nome-header input[type="text"]::placeholder {
-    color: rgba(170, 206, 236, 0.75);
+.consulta-nome-header select {
+  min-width: min(260px, 90vw);
+  background: rgba(10, 21, 43, 0.7);
 }
 
-.consulta-page #btnVoltar {
-    margin: 0;
-    width: 140px;
-    min-height: 44px;
-    padding: 0 14px;
-    border: 1px solid rgba(138, 194, 255, 0.34);
-    border-radius: 10px;
-    background: linear-gradient(145deg, rgba(89, 135, 212, 0.45), rgba(42, 83, 146, 0.68));
-    color: #e4f6ff;
-    font-weight: 600;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+.consulta-nome-header button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.consulta-page #btnVoltar svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
+.consulta-nome-header button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
-.consulta-page #btnVoltar:hover {
-    box-shadow: 0 0 20px rgba(71, 209, 255, 0.3);
+.consulta-nome-header button:hover {
+  box-shadow: 0 0 20px rgba(71, 209, 255, 0.3);
+}
+
+.tabela-solicitacoes-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 54vh;
+  margin-top: 22px;
+  overflow-x: auto;
+}
+
+.tabela-solicitacoes {
+  table-layout: fixed;
+  width: 100%;
+  background: rgba(12, 24, 48, 0.75);
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(2, 10, 24, 0.5);
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 1px solid rgba(139, 193, 255, 0.28);
+}
+
+.tabela-solicitacoes th,
+.tabela-solicitacoes td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(125, 170, 219, 0.18);
+  vertical-align: top;
+}
+
+.tabela-solicitacoes th {
+  background: linear-gradient(
+    145deg,
+    rgba(76, 141, 231, 0.82),
+    rgba(43, 95, 182, 0.88)
+  );
+  color: #e7f5ff;
+  font-weight: 600;
+}
+
+.tabela-solicitacoes tr:nth-child(even) {
+  background: rgba(110, 153, 214, 0.08);
+}
+
+.tabela-solicitacoes tr:hover {
+  background: rgba(101, 202, 255, 0.18);
+  transition: background 0.2s ease;
+}
+
+#resultadoConsultaSolicitacoes {
+  opacity: 0;
+  animation: consulta-fade-in 0.45s ease-out 0.26s forwards;
+}
+
+.status-action {
+  display: grid;
+  gap: 8px;
+}
+
+.status-action select {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid rgba(150, 196, 255, 0.36);
+  border-radius: 10px;
+  background: rgba(10, 21, 43, 0.7);
+  color: #e5f5ff;
+}
+
+.status-action button {
+  width: 100%;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid rgba(138, 194, 255, 0.34);
+  border-radius: 10px;
+  background: linear-gradient(
+    145deg,
+    rgba(89, 135, 212, 0.45),
+    rgba(42, 83, 146, 0.68)
+  );
+  color: #e4f6ff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.estado-vazio {
+  padding: 28px;
+  border-radius: 14px;
+  background: rgba(12, 24, 48, 0.75);
+  border: 1px solid rgba(139, 193, 255, 0.28);
+  color: #dff3ff;
+  text-align: center;
 }
 
 @media (max-width: 800px) {
-    .tabela-fornecedor {
-        font-size: 14px;
-    }
-    .tabela-fornecedor th, .tabela-fornecedor td {
-        padding: 8px 4px;
-    }
+  .tabela-solicitacoes {
+    font-size: 14px;
+  }
+  .tabela-solicitacoes th,
+  .tabela-solicitacoes td {
+    padding: 8px 4px;
+  }
 
-    .consulta-nome-header {
-        align-items: stretch;
-    }
+  .consulta-nome-header {
+    align-items: stretch;
+  }
 
-    .consulta-page #btnVoltar {
-        width: min(340px, 90vw);
-    }
+  .consulta-nome-header select,
+  .consulta-nome-header button {
+    width: min(340px, 90vw);
+  }
 }
 
 @keyframes consulta-fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .consulta-shell .consulta-nome-header > *,
-    #resultadoConsultaNome {
-        animation: none;
-        opacity: 1;
-        transform: none;
-    }
+  .consulta-shell .consulta-nome-header > *,
+  #resultadoConsultaSolicitacoes {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
